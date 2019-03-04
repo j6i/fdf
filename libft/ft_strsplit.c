@@ -6,7 +6,7 @@
 /*   By: jgabelho <jgabelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/03 18:22:13 by jgabelho          #+#    #+#             */
-/*   Updated: 2018/12/08 15:49:51 by jgabelho         ###   ########.fr       */
+/*   Updated: 2019/03/01 16:39:18 by jgabelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,43 @@
 #include <string.h>
 #include <stdlib.h>
 
+static int		wordlen(char const *str, char c)
+{
+	int	i;
+	int	len;
+
+	i = 0;
+	len = 0;
+	while (str[i] == c)
+		i++;
+	while (str[i] != c && str[i++] != '\0')
+		len++;
+	return (len);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
-	char	**fresh;
-	char	*p;
 	int		i;
 	int		j;
+	int		k;
+	char	**an_eggy_boy;
 
-	if (!s || !c)
+	if (s == 0 || (an_eggy_boy = malloc(sizeof(*an_eggy_boy) *
+					(ft_countword(s, c) + 1))) == 0)
 		return (0);
-	if ((fresh = malloc((ft_countword(s, c) + 1) * sizeof(char *))) == 0)
-		return (0);
-	i = 0;
+	i = -1;
 	j = 0;
-	p = (char *)s;
-	while (s[i] != '\0')
+	while (++i < ft_countword(s, c))
 	{
-		if (s[i] != c)
-		{
-			fresh[j++] = ft_copyaword(p, c);
-			while (s[i + 1] != c && s[++i + 1] != '\0')
-				p++;
-		}
-		i++;
-		p++;
+		k = 0;
+		if ((an_eggy_boy[i] = ft_strnew(wordlen(&s[j], c) + 1)) == 0)
+			an_eggy_boy[i] = 0;
+		while (s[j] == c)
+			j++;
+		while (s[j] != c && s[j])
+			an_eggy_boy[i][k++] = s[j++];
+		an_eggy_boy[i][k] = '\0';
 	}
-	fresh[j] = 0;
-	return (fresh);
+	an_eggy_boy[i] = 0;
+	return (an_eggy_boy);
 }

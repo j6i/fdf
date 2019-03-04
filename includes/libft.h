@@ -6,7 +6,7 @@
 /*   By: jgabelho <jgabelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 16:29:19 by jgabelho          #+#    #+#             */
-/*   Updated: 2019/02/27 16:36:46 by jgabelho         ###   ########.fr       */
+/*   Updated: 2019/02/28 16:08:03 by jgabelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-# define BUFF_SIZE 32
+# define BUFF_SIZE 69
 # define MAX_FD 5000
 
 typedef struct		s_list
