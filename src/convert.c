@@ -6,7 +6,7 @@
 /*   By: jgabelho <jgabelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 18:24:57 by jgabelho          #+#    #+#             */
-/*   Updated: 2019/03/04 19:18:11 by jgabelho         ###   ########.fr       */
+/*   Updated: 2019/03/05 15:17:12 by jgabelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ t_coor	**c_array(int **coor, int xmax, int ymax)
 		}
 		while (x < xmax)
 		{
-			c[y][x].x = WIDTH / xmax * 0.5 * (x - xmax / 2.0);
-			c[y][x].y = HEIGHT / ymax * 0.5 * (y - ymax / 2.0);
+			c[y][x].x = 1200 / xmax * 0.5 * (x - xmax / 2.0);
+			c[y][x].y = 1200 / ymax * 0.5 * (y - ymax / 2.0);
 			c[y][x].z = -10 * coor[y][x];
 			x++;
 		}

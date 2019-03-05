@@ -6,7 +6,7 @@
 /*   By: jgabelho <jgabelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 19:16:40 by jgabelho          #+#    #+#             */
-/*   Updated: 2019/03/05 15:06:59 by jgabelho         ###   ########.fr       */
+/*   Updated: 2019/03/05 15:16:39 by jgabelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int		main(int argc, char **argv)
 	if ((m->ymax = file_len(argv[1])) == 0)
 		return (0);
 	m->m_p = mlx_init();
-	m->w_p = mlx_new_window(m->m_p, WIDTH, HEIGHT, "memes");
+	m->w_p = mlx_new_window(m->m_p, 1200, 1200, "memes");
 	if ((coor = file_reader(argv[1], m->xmax, m->ymax)) == 0)
 		return (0);
 	if ((m->c = c_array(coor, m->xmax, m->ymax)) == 0)

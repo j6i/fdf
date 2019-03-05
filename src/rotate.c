@@ -6,7 +6,7 @@
 /*   By: jgabelho <jgabelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 15:31:44 by jgabelho          #+#    #+#             */
-/*   Updated: 2019/03/05 15:07:29 by jgabelho         ###   ########.fr       */
+/*   Updated: 2019/03/05 15:19:05 by jgabelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	rotate_iso(t_map *m)
 	double		thetay;
 	double		thetaz;
 
-	thetay = PI / 5.6;
+	thetay = 3.14159265359 / 5.6;
 	thetaz = 0.615472907;
 	rotate_y(m, m->cog, m->c, thetay);
 	rotate_z(m, m->c, m->c, thetaz);
@@ -30,9 +30,9 @@ void	rotate_cool(t_map *m)
 	double		thetay;
 	double		thetaz;
 
-	thetax = PI / 4.0;
-	thetay = PI / 6.0;
-	thetaz = PI / 6.0;
+	thetax = 3.14159265359 / 4.0;
+	thetay = 3.14159265359 / 6.0;
+	thetaz = 3.14159265359 / 6.0;
 	rotate_z(m, m->cog, m->c, thetaz);
 	rotate_x(m, m->c, m->c, thetax);
 	rotate_y(m, m->c, m->c, thetay);

@@ -6,7 +6,7 @@
 /*   By: jgabelho <jgabelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 14:32:32 by jgabelho          #+#    #+#             */
-/*   Updated: 2019/03/05 15:03:04 by jgabelho         ###   ########.fr       */
+/*   Updated: 2019/03/05 15:20:04 by jgabelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
-
-# define PI 3.14159265359
-# define WIDTH 1200
-# define HEIGHT 1200
 
 typedef struct		s_coor
 {
