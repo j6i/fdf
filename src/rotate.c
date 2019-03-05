@@ -6,7 +6,7 @@
 /*   By: jgabelho <jgabelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/03 15:31:44 by jgabelho          #+#    #+#             */
-/*   Updated: 2019/03/04 19:18:11 by jgabelho         ###   ########.fr       */
+/*   Updated: 2019/03/05 15:07:29 by jgabelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	rotate_z(t_map *m, t_coor **from, t_coor **result, double theta)
 				from[y][x].y * sin(theta);
 			result[y][x].y = from[y][x].x * sin(theta) +
 				from[y][x].y * cos(theta);
-				result[y][x].z = from[y][x].z;
+			result[y][x].z = from[y][x].z;
 			x++;
 		}
 		y++;

@@ -6,7 +6,7 @@
 /*   By: jgabelho <jgabelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/27 14:32:32 by jgabelho          #+#    #+#             */
-/*   Updated: 2019/03/04 19:18:52 by jgabelho         ###   ########.fr       */
+/*   Updated: 2019/03/05 15:03:04 by jgabelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # include <stdlib.h>
 # include <math.h>
 
-#define PI 3.14159265359
-#define WIDTH 1200
-#define HEIGHT 1200
+# define PI 3.14159265359
+# define WIDTH 1200
+# define HEIGHT 1200
 
 typedef struct		s_coor
 {
@@ -62,11 +62,14 @@ int					file_len(char *file);
 
 t_coor				**c_array(int **coor, int xmax, int ymax);
 
-void				rotate_z(t_map *m, t_coor **from, t_coor **result, double theta);
+void				rotate_z(t_map *m, t_coor **from,
+						t_coor **result, double theta);
 
-void				rotate_y(t_map *m, t_coor **from, t_coor **result, double theta);
+void				rotate_y(t_map *m, t_coor **from,
+						t_coor **result, double theta);
 
-void				rotate_x(t_map *m, t_coor **from, t_coor **result, double theta);
+void				rotate_x(t_map *m, t_coor **from,
+						t_coor **result, double theta);
 
 void				rotate_iso(t_map *m);
 

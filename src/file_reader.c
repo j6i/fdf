@@ -6,7 +6,7 @@
 /*   By: jgabelho <jgabelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/25 15:55:08 by jgabelho          #+#    #+#             */
-/*   Updated: 2019/03/04 19:19:34 by jgabelho         ###   ########.fr       */
+/*   Updated: 2019/03/05 15:05:16 by jgabelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,7 @@ int		file_width(char *file)
 
 	i = 0;
 	if ((fd = open(file, O_RDONLY)) == -1)
-	{
-		write(1, "open failed", 11);
 		return (0);
-	}
 	if (get_next_line(fd, &lines) == -1)
 	{
 		perror("fdf");
