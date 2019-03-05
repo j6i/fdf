@@ -1,19 +1,38 @@
-CC = cc
-FLAGS = -g -I /minilibx_macos/ -o ft_fdf
-SRC = fdf.c file_reader.c rotate.c convert.c
-LIB = -lft -I libft -L libft -L minilibx_macos/ -lmlx -framework OpenGL -framework AppKit
-OBJECTS = fdf.o file_reader.o rotate.o convert.o
+CC=cc
+CFLAGS=-Werror -Wextra -Wall -I libft/includes -I minilibx_macos -I includes
+LFLAGS=-L libft/ -lft -L minilibx_macos/ -lmlx -framework OpenGL -framework AppKit
+NAME=fdf
+SRC=fdf.c file_reader.c rotate.c convert.c
+OBJ=$(SRC:%.c=%.o)
 
-all:
-	@make -C minilibx_macos/
+.PHONY: clean fclean all re norm norme debug
+
+VPATH = src obj libft/includes includes
+
+$(NAME): $(OBJ)
 	@make -C libft/
-	@$(CC) $(FLAGS) $(SRC) $(LIB)
+	@make -C minilibx_macos/
+	@$(CC) -o $(NAME) obj/* $(LFLAGS)
+	@echo done
+
+all: $(NAME)
+
+%.o: %.c
+	@mkdir -p obj
+	$(CC) -g $(CFLAGS) -o obj/$@ -c $<
 
 clean:
-	@make -C libft/ clean
-	@make -C minilibx_macos/ clean
+	@rm -rf obj/
+	@make -C libft clean
+	@make -C minilibx_macos clean
 
 fclean: clean
-	@make -C libft/ fclean
+	rm -f $(NAME)
+	make -C libft fclean
 
 re: fclean all
+
+norm:
+	norminette src/. includes/*
+
+norme: norm
